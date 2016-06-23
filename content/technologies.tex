@@ -1,0 +1,107 @@
+\chapter{Tecnologías utilizadas}
+
+\section{Visión general}
+
+En esta sección se presentan las diferentes tecnologías que se han utilizado para el desarrollo del proyecto. Las principales tecnologías usado son las siguientes:
+
+\section{Microsoft Azure}
+
+Microsoft Azure\cite{Azure} es una plataforma e infraestructura de cloud computing creada por Microsoft para desarrollar, desplegar y gestionar aplicaciones y servicios a través de una red global de data centers gestionados por Microsoft.
+Proporciona servicios tanto \acrshort{paas} como \acrshort{iaas} y soporta una multitud de lenguajes de programación, herramientas e infraestructuras, ya sean propias de Microsoft o de terceros.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=1.2]{fig/microsoft_azure}
+	\caption{Logotipo de Microsoft Azure}
+\end{figure}
+
+Los servicios de Azure utilizados en este proyecto son los siguientes:
+\begin{itemize}
+	\item Creación y hospedaje de una aplicación web
+	\item Creación y hospedaje de un servidor \acrshort{sql}
+	\item Creación y hospedaje de una \acrshort{bd} \acrshort{sql}
+\end{itemize}
+
+\subsection{Razón de uso}
+
+\begin{itemize}
+	\item Al ser ambos productos de Microsoft, la integración entre Microsoft Azure y Microsoft Visual Studio Enterpise 2015 es inmejorable, haciendo que el despliegue de aplicaciones sea fácil y rápido.
+	\item Familiaridad del equipo con la plataforma.
+	\item Al ser un servicio ofrecido por un gigante de las tecnologías de información como Microsoft, se puede esperar que el servicio será seguro y fiable y cuente con un buen soporte en el caso de incidencias.
+
+\end{itemize}
+
+\section{Microsoft Cognitive Services}
+
+Microsoft Cognitive Services\cite{Oxford} (anteriormente Project Oxford) es un conjunto de \acrshort{api}s, \acrshort{sdk}s y servicios disponibles a los desarrolladores para que hagan sus aplicaciones más inteligentes, interactivas y accesibles. Microsoft Cognitive Services expande el abanico ya existente de APIs de machine learning creadas por Microsoft y permite a los desarrolladores añadir características inteligentes de forma fácil, tales como reconocimiento de voz, facial, emoción y visión, así como comprensión de lenguaje natural.
+
+\subsection{Razón de uso}
+
+\begin{itemize}
+	\item Existencia de pruebas gratuitas
+	\item Documentación extensa, clara y concisa.
+
+\end{itemize}
+
+\section{Universal Windows Platform}
+
+La \acrfull{uwp}\cite{UWP} es una arquitectura de aplicación homogénea creada por Microsoft y introducida por primera vez en Windows 10, el propósito de esta plataforma es ayudar a desarrollar aplicaciones de estilo Metro que puedan ejecutarse en cualquier dispositivo Windows 10 sin necesidad de ser reescritas, soporta el desarrollo de aplicaciones de Windows usando C++, C\#, \acrshort{vb.net} o \acrshort{xaml}. La API está implementada en C++ y soportada en C++, \acrshort{vb.net}, C\#, F\# y JavaScript. Diseñada como una extensión de la plataforma Windows Runtime introducida en Windows Server 2012 y Windows 8, \acrshort{uwp} permite a los desarrolladores crear aplicaciones que puedan, potencialmente, ejecutarse en múltiples tipos de dispositivos.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.7]{fig/uwp_representation}
+	\caption{Representación de \acrshort{uwp}}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Razón de uso}
+
+La Plataforma Universal Windows proporciona recursos como Windows.Media.Capture o Windows.Devices.Geolocation, que son utilizados en este proyecto, \acrshort{uwp} incluye muchas librerías que permiten a un programador acceder a los recursos del sistema de una forma estandarizada sin necesidad de preocuparse de que hardware se use, con MediaCapture, una aplicación \acrshort{uwp} es capaz de usar el mismo código para acceder a una cámara \acrshort{usb} de hace 10 años y una que acaba de salir de la fábrica, siempre y cuando el sistema tenga los drivers adecuados, se da el mismo caso con la librería Geolocation, no siendo necesario hacer ninguna consideración sobre que hardware debe tener el dispositivo, independientemente de si el dispositivo en el que el código se ejecuta tenga \acrshort{gps}, \acrshort{wifi} o una conexión por cable a internet, el código subyacente determinará la posición del dispositivo de la manera que estime conveniente de acuerdo con la petición que se le ha realizado (si se requiere alta precisión, o no), esto hace que la codificación de funciones complejas que hace años habría llevado una gran cantidad de tiempo hoy en día se pueda hacer en menos de una hora.
+
+\lstinputlisting[frame=single, caption=Código para manejo de WebCam]{content/code/mediacapture.cs}
+\lstinputlisting[frame=single, caption=como obtener la localización del dispositivo]{content/code/geolocation.cs}
+
+\section{ASP.NET}
+
+ASP.NET\cite{asp.net} es una infraestructura open-source de aplicaciones web server-side diseñada para el desarrollo web de páginas web dinámicas, fue originalmente desarrollada exclusivamente por Microsoft.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.6]{fig/asp-net_highlights}
+	\caption{Aspectos destacados de ASP.NET}
+\end{figure}
+
+En este caso en concreto se ha utilizado ASP.NET \acrshort{mvc}, radicalmente distinto a ASP.NET Web Forms y que usa el patrón \acrfull{mvc}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.50]{fig/mvc_pattern}
+	\caption{Representación del patrón \acrshort{mvc}}
+\end{figure}
+
+\subsection{Razón de uso}
+
+\begin{itemize}
+	\item Una gran variedad de plantillas de calidad para desarrollar aplicaciones web rápidamente, así como placeholders para autenticación con servicios externos ya incluidos en ellas.
+	\item Extensa documentación y tutoriales creados por Microsoft.
+	\item Bootstrap integrado junto con la mayoría de las plantillas.
+
+\end{itemize}
+
+\section{Application Insights}
+
+\acrfull{ai}\cite{AI}, también denominado Visual Studio \acrfull{ai} es una herramienta de depuración de errores que permite detectar y diagnosticar errores en una aplicación web sin tener que conectar un debugger a la misma.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.50]{fig/applicationinsights_logo}
+	\caption{Logotipo de \acrfull{ai}}
+\end{figure}
+
+Usado por clientes como Xerox\cite{Xerox}, \acrshort{ai} permite realizar un amplio análisis de una página o aplicación web en ejecución, pudiendo recabar datos sobre fallos del servidor (excepciones, peticiones fallidas, etc.) o rendimiento (tiempo de respuesta, número de peticiones), \acrshort{ai} utiliza Machine Learning para analizar constantemente una aplicación y determinar su funcionamiento normal, para así detectar comportamientos anómalos de manera más efectiva, permitiendo a los desarrolladores encontrar errores en su aplicación antes de que estos afecten el funcionamiento del código de forma significativa.
+
+\section{Razón de uso}
+
+Al no poder estar monitorizando el servidor desplegado en Azure para servir de fuente de datos al Smart Mirror todo el rato mediante la conexión de un debugger de Visual Studio a este, \acrshort{ai} ha sido una herramienta inestimable para diagnosticar problemas que no son evidentes en una primera ejecución del código y que solo aparecen bajo circunstancias especiales.
+

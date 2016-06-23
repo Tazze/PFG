@@ -1,0 +1,20 @@
+things to add
+-Application Insights                                                   //done
+-QR Code library issue (x86 and ARM)                                    //done
+-add code examples for CamCap and maybe the MirrorClient Controller     //done
+-add the database schema of the server                                  //done
+-more information about ASP.NET                                         
+-Razor                                                                  
+-Bootstrap                                                              
+-Google APIs                                                            
+-OpenWeatherMap                                                         
+-Entity Framework                                                       
+-Raspberry                                                              
+
+\lstinputlisting[frame=single, caption=como obtener la localización del dispositivo]{content/code/geolocation.cs}
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[angle=0, page=1, scale=.6]{fig/diagrama_gantt}
+	\caption{Diagrama de Gantt}\label{fig:gantt_diagram}
+\end{figure}

@@ -1,0 +1,9 @@
+POST https://api.projectoxford.ai/face/v1.0/
+    detect?returnFaceId=true&returnFaceLandmarks=false HTTP/1.1
+Content-Type: application/json
+Host: api.projectoxford.ai
+Content-Length: 40
+
+{
+    "url":"http://example.com/1.jpg"
+}

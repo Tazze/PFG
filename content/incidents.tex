@@ -1,0 +1,26 @@
+\chapter{Incidencias}
+
+\section{Visión general}
+
+Durante el desarrollo del proyecto han surgido diversas incidencias que han ralentizado el desarrollo de este. A continuación se van a explicar algunas de las más importantes, así como la decisión que se ha tomado en cada una de ellas.
+
+\section{Problemas con la sensibilidad del hardware}
+
+La versión original del proyecto incluía un interruptor cinético que idealmente se activaría cuando un usuario le diese un ligero toque al Smart mirror para limitar la cantidad de datos consumida por el cliente mandado y recibiendo información constantemente, sin embargo, independientemente de los ajustes de sensibilidad que se hicieran, dicho interruptor ha resultado en todo momento o demasiado sensible (activándose incluso sin ningún tipo de interacción) o demasiado duro (activándose solo cuando se aplica un impacto considerable sobre la superficie del marco del Smart Mirror), así que finalmente se ha prescindido de el a favor de una comprobación periódica de presencia de usuarios a través de la Webcam.
+
+\section{Problemas con las peticiones de Microsoft Cognitive Services}
+
+Originalmente el intervalo entre fotos tomadas era de 3 segundos, pero debido a limitaciones del periodo de prueba de Microsoft Cognitive Services, se ha tenido que ampliar dicho intervalo significativamente para no sobrepasar el número de consultas permitidas por minuto (20).
+
+Al parecer los servicios de Microsoft Cognitive Services no pueden acceder a una imagen almacenada en el servidor por \acrshort{https}, teniendose que hacer la peticion por \acrshort{http}
+
+\section{Planteamiento inicial}
+
+Originalmente el cliente iba a hacer uso de una librería para hacer uso de códigos \acrshort{qr} y que añade funcionalidad tanto para reconocer y leer códigos que estén contenidos en una imagen como para crear códigos \acrshort{qr} a partir de cadenas de caracteres.
+Sin embargo, esta librería solo ofrecía soporte para arquitectura x86 con lo cual habría sido imposible desplegar una aplicación que hacía uso de esa librería en un dispositivo \acrshort{arm} como una Raspberry Pi.
+
+El uso de los \acrshort{qr} estaba pensado para simplificar el proceso de registro con el espejo, haciendo que el usuario leyese un código \acrshort{qr} en pantalla y solo tuviera que introducir sus credenciales de Google para completar el proceso, pero la carencia de códigos \acrshort{qr} en el cliente no ha sido el único factor determinante para tener que buscar una alternativa, ya que eso se podría haber solventado haciendo que fuera el servidor el que generase el código \acrshort{qr} en vez del cliente.
+
+Aunque el usuario es capaz de ver con relativa facilidad el texto sobre el espejo, la visibilidad no es tan buena como en un primer momento se quiso que fuera, probablemente por una combinación de que el monitor usado no es particularmente brillante incluso con el brillo al máximo, y que los dos cristales que forman el espejo de observación son considerablemente gruesos, y es posible que eso diera problemas para leer códigos QR desde el espejo dependiendo del terminal telefónico que usase el usuario para leerlo.
+
+Finalmente, el ultimo problema era asegurarse de que la cara capturada fuera de una buena calidad, el sistema iba a funcionar de tal manera que una vez se detectase una cara desconocida delante del espejo, el servidor crearía automáticamente un perfil para el usuario al que solo le faltaría la conexión a los servicios de Google, pero al no poder idear una solución para asegurarse de que la foto fuera de una calidad suficiente para garantizar una cantidad mínima de seguridad, se acabó por descartar este enfoque por completo.

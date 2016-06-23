@@ -1,0 +1,70 @@
+\chapter{Especificación de requisitos}
+
+\section{Visión general}
+
+En el capítulo de especificación de requisitos se detallan los requisitos que deben cumplir cada uno de los componentes del sistema con el fin de que todo funcione correctamente, tanto el cliente como el servidor tienen una sección dedicada a sus requisitos.
+
+\begin{itemize}
+	\item \textbf{Especificación de requisitos del cliente \acrshort{uwp}:} en esta sección se recogen los requisitos que debe de satisfacer el cliente que actuará como Smart Mirror.
+
+	\item \textbf{Especificación de requisitos del servidor:} en esta sección se recogen los requisitos que debe satisfacer el servidor encargado de proporcionarle informacion y servicios al Smart Mirror.
+\end{itemize}
+
+\section{Especificación de requisitos del cliente \acrshort{uwp}}
+
+Los requisitos del cliente \acrshort{uwp} son:
+
+\begin{itemize}
+	\item \textbf{RF.0.1}
+
+	El cliente debe ser capaz de usar una webcam para sacar fotos de forma periódica.
+
+	\item \textbf{RF.0.2}
+
+	El cliente debe ser capaz de determinar su posición geográfica mediante su conexión a internet.
+
+	\item \textbf{RF.0.3}
+
+	El cliente debe ser capaz de realizar peticiones correctas a la API de OpenWeatherMap y parsear las respuestas.
+
+	\item \textbf{RF.0.4}
+
+	El cliente debe ser capaz de enviar las imágenes que captura al servidor de forma correcta y parsear las respuestas del mismo.
+
+	\item \textbf{RNF.0.1}
+
+	La información debe ser presentada al usuario de forma elegante y clara.
+
+\end{itemize}
+
+
+\section{Especificación de requisitos del servidor}
+
+Los requisitos del servidor son los siguientes:
+
+\begin{itemize}
+	\item \textbf{RF.0.1}
+
+	El servidor debe ser capaz de recibir imágenes del cliente y almacenarlas para su uso para funciones de identificación.
+
+	\item \textbf{RF.0.2}
+
+	El servidor debe ser capaz de autenticar a los usuarios por medio de Google y de almacenar datos adicionales como una URL correspondiente a una foto del usuario, proporcionada por este.
+
+	\item \textbf{RF.0.3}
+
+	El servidor debe ser capaz de extraer información de los perfiles de Google de los usuarios, en concreto eventos de calendario, tareas y mensajes de correo electrónico.
+
+	\item \textbf{RF.0.4}
+
+	El servidor debe ser capaz de usar la API de Microsoft Cognitive Services para comparar imágenes e identificar usuarios.
+
+	\item \textbf{RNF.0.1}
+	
+	El proceso de registro debe ser simple y rápido para el usuario.
+	
+\end{itemize}
+
+\section{Criterios de validación}
+
+El cumplimiento de los requisitos por parte de los productos software se garantizan mediante pequeños tests unitarios que comprueban la funcionalidad del software con datos de prueba antes de integrarlo con el resto del sistema.

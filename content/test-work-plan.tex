@@ -1,0 +1,25 @@
+\chapter{Plan de pruebas}
+
+\section{Visión general}
+
+Durante el desarrollo del proyecto se han realizado diversas pruebas para asegurar la fiabilidad del sistema en completo, tratando de minimizar el número de fallos que pueden ocurrir. En este capítulo se van a explicar algunas de las pruebas realizadas.
+
+\section{Pruebas del servidor web}
+
+Prueba de identificación facial: en este test el cliente manda la foto de alguien que se encuentra delante del espejo para que sea identificado correctamente, sirve para determinar si el servidor se está comunicando correctamente con la \acrshort{api} de Microsoft Cognitive Services, a continuación, se incluyen ejemplos de una petición y de una respuesta, en esta prueba el servidor debe identificar correctamente al usuario y devolver su identificador.
+
+\lstinputlisting[frame=single, caption=Petición a Microsoft Cognitive Services]{content/code/oxfordDetectRequest.txt}
+
+\lstinputlisting[frame=single, caption=Respuesta de Microsoft Cognitive Services]{content/code/oxfordDetectResponse.json}
+
+\lstinputlisting[frame=single, caption=Peticion a la \acrshort{api} de Gmail]{content/code/gmailRequest.txt}
+
+\lstinputlisting[frame=single, caption=Respuesta de la \acrshort{api} de Gmail]{content/code/gmailResponse.json}
+
+\subsection{Pruebas del cliente}
+
+Prueba de recepción y parseo de respuesta del servidor: en esta prueba se configura el servidor para que devuelva una respuesta de prueba sin realmente hacer comprobaciones para identificar a un usuario, con esta prueba se determina si el cliente es capaz de procesar la información que le llega del servidor, a continuación, se muestra un \acrshort{json} de prueba mandado desde el servidor.
+
+\lstinputlisting[frame=single, caption=Respuesta del servidor]{content/code/serverResponse.json}
+
+\lstinputlisting[frame=single, caption=Respuesta de la \acrshort{api} de OpenWeatherMap]{content/code/openWeatherResponse.json}

@@ -1,0 +1,92 @@
+\documentclass{DeustoFDP}
+
+\usepackage{hologo} % Paquete no necesario. Borrar en la memoria final al sustituir el texto
+\usepackage{eurosym}
+\usepackage{color}
+\usepackage{placeins}
+\usepackage{tikz}
+\usepackage[toc, acronym, nomain]{glossaries}
+
+\usetikzlibrary{matrix}
+
+\setlength{\headheight}{12.22504pt}
+
+\hypersetup{
+  pdfauthor={Santiago Mazagatos Pérez Sebastian Rengel},
+  pdftitle={Diseño e implementaci\'on de un Smart Mirror multiusuario con autenticaci\'on por reconocimiento facial},
+}
+
+\colorlet{helpful}{lime!70}
+\colorlet{harmful}{red!30}
+\colorlet{internal}{yellow!20}
+\colorlet{external}{cyan!30}
+\colorlet{F}{helpful!50!internal}
+\colorlet{D}{harmful!50!internal}
+\colorlet{O}{helpful!50!external}
+\colorlet{A}{harmful!50!external}
+
+\newcommand{\texta}{Beneficioso\par}
+\newcommand{\textb}{Dañino\par}
+\newcommand{\textcn}{Origen interno\par}
+\newcommand{\textdn}{Origen externo\par}
+
+\newcommand{\back}[1]{\fontsize{60}{70}\selectfont #1}
+
+\bibliography{bibliografia}
+\makeglossaries
+
+\begin{document}
+
+\input{content/acronyms}
+
+\frontmatter 
+\pagestyle{plain}
+
+% Las siguientes lineas (21--26) se pueden eliminar del documento final.
+% Notese que en ese caso es necesario descomentar la linea 28 para que las
+% paginas esten correctamente numeradas.
+\begin{titlepage} 
+  \newgeometry{left=0cm,right=0cm,bottom=0cm,top=0cm}
+  \includegraphics{fig/portada_final}
+  \restoregeometry
+\end{titlepage}
+\cleardoublepage
+
+%\setcounter{page}{3}
+
+\input{content/abstract}
+
+\cleardoublepage\tableofcontents
+\cleardoublepage\listoffigures
+\cleardoublepage\listoftables
+\cleardoublepage\lstlistoflistings
+
+\mainmatter
+\pagestyle{phdthesis}
+
+\input{content/introduction}
+\input{content/project-objectives}
+\input{content/requirements-specification}
+\input{content/technologies}
+\input{content/design-specification}
+\input{content/implementation-considerations}
+\input{content/test-work-plan}
+\input{content/users-manual}
+\input{content/incidents}
+\input{content/conclusions}
+
+\begingroup
+\raggedright
+\sloppy
+\printbibliography[heading=bibintoc]
+\endgroup
+
+\printglossary[type=\acronymtype, title=Acrónimos, toctitle= Acrónimos]
+
+\appendix
+
+\input{content/acknowledgements}
+
+\backmatter
+
+\end{document}

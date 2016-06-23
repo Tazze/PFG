@@ -1,0 +1,21 @@
+\chapter{Manual de usuario}
+
+\section{Manual del sistema}
+
+En este capítulo se muestra un breve manual para el registro en el sistema y el uso del espejo.
+
+\subsection{Preparación previa}
+
+El primer paso es que el usuario suba una foto suya a algún servicio de tal manera que su foto sea accesible mediante una URL, la foto debe incluir la cara del usuario, de frente y en condiciones de iluminación favorables si se quiere que la verificación de identidad funcione correctamente.
+
+\subsection{Registro en el servidor mediante una cuenta Google}
+
+Para registrarse en el servidor mediante Google el usuario debe presionar el botón de login que aparece en la página principal de la aplicación web, una vez ahí, debe hacer clic en el botón “Google”, lo cual lo llevará a un portal de autenticación en el que podrá revisar los permisos que se está otorgando a la aplicación y se puede decidir si se quiere continuar con el registro o no.
+
+Una vez autenticado el usuario con Google, se le lleva a una página en la que debe introducir su nombre de usuario y la URL de la imagen que ha preparado en el punto anterior, estos datos quedarán registrados en la \acrshort{bd} del servidor para su uso.
+
+Se debe tener en cuenta que el eliminar la foto del lugar en el que se tiene hospedada causará que el sistema deje de poder identificar al usuario, ya que este solo guarda la URL, no la imagen en sí.
+
+\subsection{Consideraciones de uso}
+
+Se ruega se tenga en cuenta que la identificación por reconocimiento facial no es infalible, y que no se puede garantizar la privacidad absoluta de los datos del usuario, especialmente si la foto proporcionada por el mismo no es de buena calidad.

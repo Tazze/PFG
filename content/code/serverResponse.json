@@ -1,0 +1,19 @@
+   "tasks":[
+      {
+         "task":"this is a test task"
+      }
+   ],
+   "calendarEvents":[
+      {
+         "calendarEvent":"this is a test calendarEvent",
+         "time":"Tuesday, June 21, 2016 3:43:35 AM",
+         "location":"here"
+      }
+   ],
+   "emails":[
+      {
+         "sender":"this is a test sender",
+         "subject":"test"
+      }
+   ]
+}

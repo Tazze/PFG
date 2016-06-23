@@ -1,0 +1,2 @@
+GET https://www.googleapis.com/gmail/v1/users/
+tazzeoptical%40gmail.com/messages?maxResults=5&key={YOUR_API_KEY}
