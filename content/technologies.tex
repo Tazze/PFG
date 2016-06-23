@@ -62,7 +62,7 @@ La \acrfull{uwp}\cite{UWP} es una arquitectura de aplicación homogénea creada 
 La Plataforma Universal Windows proporciona recursos como Windows.Media.Capture o Windows.Devices.Geolocation, que son utilizados en este proyecto, \acrshort{uwp} incluye muchas librerías que permiten a un programador acceder a los recursos del sistema de una forma estandarizada sin necesidad de preocuparse de que hardware se use, con MediaCapture, una aplicación \acrshort{uwp} es capaz de usar el mismo código para acceder a una cámara \acrshort{usb} de hace 10 años y una que acaba de salir de la fábrica, siempre y cuando el sistema tenga los drivers adecuados, se da el mismo caso con la librería Geolocation, no siendo necesario hacer ninguna consideración sobre que hardware debe tener el dispositivo, independientemente de si el dispositivo en el que el código se ejecuta tenga \acrshort{gps}, \acrshort{wifi} o una conexión por cable a internet, el código subyacente determinará la posición del dispositivo de la manera que estime conveniente de acuerdo con la petición que se le ha realizado (si se requiere alta precisión, o no), esto hace que la codificación de funciones complejas que hace años habría llevado una gran cantidad de tiempo hoy en día se pueda hacer en menos de una hora.
 
 \lstinputlisting[frame=single, caption=Código para manejo de WebCam]{content/code/mediacapture.cs}
-\lstinputlisting[frame=single, caption=como obtener la localización del dispositivo]{content/code/geolocation.cs}
+\lstinputlisting[frame=single, caption=Como obtener la localización del dispositivo]{content/code/geolocation.cs}
 
 \section{ASP.NET}
 
