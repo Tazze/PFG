@@ -159,9 +159,21 @@ Google proporciona acceso gratuito a sus \acrshort{api}s mientras que Microsoft 
 
 \section{OAuth}
 
+OAuth es un estándar abierto para propósitos de autorización, usado comúnmente para que los usuarios de internet tengan una forma de registrarse en sitios web de terceros usando sus cuentas Microsoft, Google, Facebook, Twitter y otras sin tener que poner en riesgo su contraseña.
 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.50]{fig/oauth_logo}
+	\caption{Logotipo de OAuth}
+\end{figure}
+
+En general, OAuth provee un acceso delegado seguro a recursos en el lugar de un propietario de dichos recursos. Especifica un proceso que es necesario seguir para que los propietarios de los recursos autoricen el acceso de terceros a sus servidores sin tener que compartir sus credenciales. Diseñado específicamente para trabajar con \acrshort{http}, OAuth permite que se emitan tokens de acceso a clientes de terceros mediante un servidor de autorización con el permiso del propietario del recurso. Posteriormente ese token puede ser usado por el tercero para acceder a los recursos protegidos del servidor.
 
 \subsection{Razón de uso}
+
+OAuth viene incluido con ASP.NET mediante el paquete Microsoft.OWIN y proporciona un acceso estandarizado a multitud de servicios de autenticación en el que la única diferencia es la introducción de claves secretas proporcionadas por los servicios de los diferentes proveedores.
+
+\lstinputlisting[frame=single, caption=Configuración de diferentes servicios externos en una aplicación ASP.NET]{content/code/oauth.cs}
 
 \section{OpenWeatherMap}
 
