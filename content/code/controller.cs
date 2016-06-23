@@ -4,7 +4,8 @@ public async Task < JsonResult > GetUserInfoStream() {
  var stream = Request.InputStream;
  FileStream fileStream = null;
  try {
-  fileStream = System.IO.File.Create(Server.MapPath("~/Received/stream.jpg"));
+  fileStream = System.IO.File.Create
+  (Server.MapPath("~/Received/stream.jpg"));
  } catch (Exception ex) {
   new TelemetryClient().TrackException(ex);
  }
@@ -19,7 +20,8 @@ public async Task < JsonResult > GetUserInfoStream() {
 
 }
 
-private static void createReceivedDirectory(HttpServerUtilityBase Server) {
+private static void createReceivedDirectory
+(HttpServerUtilityBase Server) {
  // Specify the directory you want to manipulate.
  string path = Server.MapPath("~/Received");
 
@@ -37,20 +39,25 @@ private static void createReceivedDirectory(HttpServerUtilityBase Server) {
  } finally {}
 }
 
-static string detectUrl = "https://api.projectoxford.ai/face/v1.0/detect
+static string detectUrl = 
+"https://api.projectoxford.ai/face/v1.0/detect
 ?returnFaceId=true&returnFaceLandmarks=false";
-static string verifyUrl = "https://api.projectoxford.ai/face/v1.0/verify";
+static string verifyUrl = 
+"https://api.projectoxford.ai/face/v1.0/verify";
 
 private async static Task < string > CheckUserIdentity() {
  //TODO: create FaceId for image
  //if there's a face, beging verifying process
- //if faceId to check against is nonexistent or expired, create a new faceId.
+ //if faceId to check against is nonexistent or expired, 
+ //create a new faceId.
  //if match is found, return id, else return empty string.
 
  var context = new ApplicationDbContext();
  var users = context.Users;
  JToken token = await postAndReturn(detectUrl, 
- new DetectDataEntity("http://mirrorserverasmvc20160613125538.azurewebsites.net/Received/Stream.jpg"));
+ new DetectDataEntity
+ ("http://mirrorserverasmvc20160613125538.azurewebsites.net/
+ Received/Stream.jpg"));
  var streamFaceId = (string) token.SelectToken("faceId");
  foreach(ApplicationUser user in users) {
   if (await Verify(user, streamFaceId)) {
@@ -66,7 +73,8 @@ private async static Task < string > CheckUserIdentity() {
 }
 
 
-private async static Task < bool > Verify(ApplicationUser user, string streamFaceId) {
+private async static Task < bool > Verify
+(ApplicationUser user, string streamFaceId) {
  //https://api.projectoxford.ai/face/v1.0/detect
  //?returnFaceId=true&returnFaceLandmarks=false&subscription-key= <Your subscription key>
  //+ JSON of url
@@ -80,18 +88,22 @@ private async static Task < bool > Verify(ApplicationUser user, string streamFac
  //"faceId1":"c5c24a82-6845-4031-9d5d-978df9175426",
  //"faceId2":"015839fb-fbd9-4f79-ace9-7675fc2f1dd9"
 
- if (DateTime.SpecifyKind(user.LastUpdate, DateTimeKind.Utc).AddHours(24) < DateTime.UtcNow) {
+ if (DateTime.SpecifyKind(user.LastUpdate, DateTimeKind.Utc)
+ .AddHours(24) < DateTime.UtcNow) {
   //update FaceId
   user.LastUpdate = DateTime.Now;
   if (user.PhotoUrl != null) {
-   JToken detectToken = await postAndReturn(detectUrl, new DetectDataEntity(user.PhotoUrl));
+   JToken detectToken = await 
+   postAndReturn(detectUrl, new DetectDataEntity(user.PhotoUrl));
    user.FaceId = (string) detectToken.SelectToken("faceId");
   }
  }
  //check stream against user
 
  if (user.FaceId != null && streamFaceId != null) {
-  JToken token = await postAndReturn(verifyUrl, new VerifyDataEntity(user.FaceId, streamFaceId));
+  JToken token = await 
+postAndReturn(verifyUrl, new VerifyDataEntity
+(user.FaceId, streamFaceId));
 
   return (bool) token.SelectToken("isIdentical");
  } else {
@@ -100,12 +112,14 @@ private async static Task < bool > Verify(ApplicationUser user, string streamFac
 
 }
 
-private async static Task < JToken > postAndReturn(string url, object data) {
+private async static Task < JToken > postAndReturn
+(string url, object data) {
  var client = new HttpClient();
  client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", 
  "45183365fcc74d6093f0ac011d7ba1ce");
 
- var serializedData = new StringContent(new JavaScriptSerializer().Serialize(data), 
+ var serializedData = new StringContent
+ (new JavaScriptSerializer().Serialize(data), 
  Encoding.UTF8, "application/json");
  
  var response = await client.PostAsync(url, serializedData);

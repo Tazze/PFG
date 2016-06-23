@@ -10,7 +10,8 @@ class WebServices {
   server = ser;
   client = new HttpClient();
  }
- public async Task < HttpResponseMessage > PostPictureAsync(Stream data) {
+ public async Task <HttpResponseMessage> PostPictureAsync(Stream data)
+ {
   string address = server + "MirrorClient/GetUserInfoStream";
   Uri url = new Uri(address);
   data.Seek(0, SeekOrigin.Begin);
