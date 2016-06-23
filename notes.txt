@@ -9,7 +9,7 @@ things to add
 -Google APIs                                                            //done
 -OpenWeatherMap                                                         //done
 -Entity Framework                                                       //done
--Raspberry                                                              
+-Raspberry                                                              //done
 
 \lstinputlisting[frame=single, caption=como obtener la localización del dispositivo]{content/code/geolocation.cs}
 
