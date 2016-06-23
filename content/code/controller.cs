@@ -76,7 +76,8 @@ private async static Task < string > CheckUserIdentity() {
 private async static Task < bool > Verify
 (ApplicationUser user, string streamFaceId) {
  //https://api.projectoxford.ai/face/v1.0/detect
- //?returnFaceId=true&returnFaceLandmarks=false&subscription-key= <Your subscription key>
+ //?returnFaceId=true&returnFaceLandmarks=false&subscription-key=
+ // <Your subscription key>
  //+ JSON of url
  // example:
  //"url":"http://example.com/1.jpg"
