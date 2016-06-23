@@ -45,7 +45,7 @@ Microsoft Cognitive Services\cite{Oxford} (anteriormente Project Oxford) es un c
 
 \section{Universal Windows Platform}
 
-La \acrfull{uwp}\cite{UWP} es una arquitectura de aplicación homogénea creada por Microsoft y introducida por primera vez en Windows 10, el propósito de esta plataforma es ayudar a desarrollar aplicaciones de estilo Metro que puedan ejecutarse en cualquier dispositivo Windows 10 sin necesidad de ser reescritas, soporta el desarrollo de aplicaciones de Windows usando C++, C\#, \acrshort{vb.net} o \acrshort{xaml}. La API está implementada en C++ y soportada en C++, \acrshort{vb.net}, C\#, F\# y JavaScript. Diseñada como una extensión de la plataforma Windows Runtime introducida en Windows Server 2012 y Windows 8, \acrshort{uwp} permite a los desarrolladores crear aplicaciones que puedan, potencialmente, ejecutarse en múltiples tipos de dispositivos.
+La \acrfull{uwp}\cite{UWP} es una arquitectura de aplicación homogénea creada por Microsoft y introducida por primera vez en Windows 10, el propósito de esta plataforma es ayudar a desarrollar aplicaciones de estilo Metro que puedan ejecutarse en cualquier dispositivo Windows 10 sin necesidad de ser reescritas, soporta el desarrollo de aplicaciones de Windows usando C++, C\#, \acrshort{vb.net} o \acrshort{xaml}. La API está implementada en C++ y soportada en C++, \acrshort{vb.net}, C\#, F\# y \acrfull{js}. Diseñada como una extensión de la plataforma Windows Runtime introducida en Windows Server 2012 y Windows 8, \acrshort{uwp} permite a los desarrolladores crear aplicaciones que puedan, potencialmente, ejecutarse en múltiples tipos de dispositivos.
 
 \begin{figure}[!htbp]
 	\centering
@@ -64,13 +64,33 @@ La Plataforma Universal Windows proporciona recursos como Windows.Media.Capture 
 
 \section{ASP.NET}
 
-ASP.NET\cite{asp.net} es una infraestructura open-source de aplicaciones web server-side diseñada para el desarrollo web de páginas web dinámicas, fue originalmente desarrollada exclusivamente por Microsoft.
+ASP.NET\cite{asp.net} es una infraestructura open-source de aplicaciones web server-side diseñada para el desarrollo web de páginas web dinámicas, fue originalmente desarrollada exclusivamente por Microsoft, es ideal para crear paginas basadas en los estándares \acrshort{html}5, \acrshort{css}3 y \acrfull{js} e incluye tres maneras distintas de trabajar:
+
+\begin{itemize}
+
+\item \textbf{ASP.NET Web Forms:} usa controles y un modelo de eventos para un desarrollo basado en componentes
+
+\item \textbf{ASP.NET \acrshort{mvc}:} \acrshort{mvc} valora la separacion de conceptos y permite usar la metodología \acrshort{tdd} de una forma mas facil
+
+\item \textbf{ASP.NET Web Pages:} Web Pages prefiere un modelo de página unica que mezcla codigo y marcado \acrshort{html}.
+
+\end{itemize}
+
+Todas estas técnicas se pueden mezclar en la misma aplicación al ser todo ASP.NET
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[scale=0.6]{fig/asp-net_highlights}
 	\caption{Aspectos destacados de ASP.NET}
 \end{figure}
+
+ASP.NET incluye la ASP.NET Web \acrshort{api} para crear servicios \acrshort{rest}-ful de calidad que devuelvan \acrshort{json}, \acrshort{xml} o cualquier tipo de contenido que soporte la web, las ASP.NET Web \acrshort{api}s pueden proveer servicios de datos a aplicaciones móviles como las de Windows Phone, iPhone, Android y más, también pueden ser usadas en cualquier tipo de aplicación ASP.NET, ya sea Web Forms, \acrshort{mvc} o Web Pages.
+
+ASP.NET SignalR es una librería para desarrolladores de ASP.NET que convierten la comunicación bi-direccional de cliente y servidor en tiempo real en realidad, SignalR permite el uso de nuevos estándares como Web Sockets manteniendo la compatibilidad con exploradores más antiguos, puede soportar clientes \acrfull{js}, al igual que clientes en Android, iPhones y todos los clientes basados en C# como Windows Phone y Windows 8.
+
+ASP.NET puede usarse para crear aplicaciones móviles con \acrshort{rwd} gracias a tener Twitter Bootstrap incorporado desde Visual Studio 2013, se puede usar cualquier framework \acrshort{css} o sistemas como JQuery Mobile o Sencha.
+
+Stack Overflow\cite{StackOverflow} usa ASP.NET \acrshort{mvc} para su página junto a \acrshort{sql} Server y otras tecnologías de Microsoft
 
 En este caso en concreto se ha utilizado ASP.NET \acrshort{mvc}, radicalmente distinto a ASP.NET Web Forms y que usa el patrón \acrfull{mvc}.
 
