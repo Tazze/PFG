@@ -3,9 +3,9 @@ things to add
 -QR Code library issue (x86 and ARM)                                    //done
 -add code examples for CamCap and maybe the MirrorClient Controller     //done
 -add the database schema of the server                                  //done
--more information about ASP.NET                                         
--Razor                                                                  
--Bootstrap                                                              
+-more information about ASP.NET                                         //done
+-Razor                                                                  //done
+-Bootstrap                                                              //done
 -Google APIs                                                            
 -OpenWeatherMap                                                         
 -Entity Framework                                                       
