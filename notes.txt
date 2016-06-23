@@ -6,9 +6,9 @@ things to add
 -more information about ASP.NET                                         //done
 -Razor                                                                  //done
 -Bootstrap                                                              //done
--Google APIs                                                            
--OpenWeatherMap                                                         
--Entity Framework                                                       
+-Google APIs                                                            //done
+-OpenWeatherMap                                                         //done
+-Entity Framework                                                       //done
 -Raspberry                                                              
 
 \lstinputlisting[frame=single, caption=como obtener la localización del dispositivo]{content/code/geolocation.cs}
